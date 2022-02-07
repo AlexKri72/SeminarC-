@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-string text = Convert.ToString(new Random().Next(1, 201));
+string text = Convert.ToString(new Random().Next(1, 100001));
 Console.WriteLine($"Введено случайное число: {text}");
 if (text.Length >= 3)   Console.WriteLine($"Третья цифра числа: {text[2]}");
 else                    Console.WriteLine("Число слишком короткое, нет третьей цифры!");
