@@ -9,11 +9,8 @@ void FillArray(int[] massive)
 }
 void PrintArray(int[] array)
 {
-    int count = array.Length;
-    for (int i = 0; i < count; i++)
-    {
+    for (int i = 0; i < array.Length; i++)
         Console.Write($"{array[i]}  ");
-    }
 }
 FillArray(array);
 PrintArray(array);
