@@ -14,13 +14,12 @@ void FillArray(int[] massive)
 FillArray(array);
 
 int j = 0;
-Console.WriteLine("\t Номер позиции \tЭлемент массива \tСумма пар");
-for (int i = 0; i < array.Length; i++)
+Console.WriteLine("\t Номер позиции \tЭлемент массива \tПроизведение пар");
+for (int i = 0; i < array.Length; i++) //делаем так, а не до половины массива, ради красоты вывода
 {
     j = array.Length - i - 1;
     Console.Write($"\t \t{i} \t \t{array[i]}");
-    if (i == j) Console.WriteLine($"\t\t{array[i]}");
-    else Console.WriteLine($"\t\t{array[i] + array[j]}");
+    Console.WriteLine($"\t\t{array[i] * array[j]}");
 }
 Console.WriteLine();
 Console.WriteLine();
