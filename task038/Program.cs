@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-int[] array = new int[10];
+int[] array = new int[5];
 
 void FillArray(int[] massive)
 {
@@ -13,14 +13,13 @@ void PrintArray(int[] massive)
 {
     Console.WriteLine("\t Номер позиции \tЭлемент массива");
     for (int i = 0; i < massive.Length; i++)
-        Console.WriteLine($"\t \t{i+1} \t \t{massive[i]}");
+        Console.WriteLine($"\t \t{i} \t \t{massive[i]}");
 }
 // закончились методы, началось тело программы
 FillArray(array);
 PrintArray(array);
 int a = 0;
-for (int i = 0; i < array.Length; i++)
-    if ((i + 1) % 2 == 0) a += array[i];
+for (int i = 1; i < array.Length; i += 2) a += array[i];
 
 Console.WriteLine($"\nСумма чисел массива, расположенных на нечётных позициях, равна {a} .\n");
 Console.WriteLine();
