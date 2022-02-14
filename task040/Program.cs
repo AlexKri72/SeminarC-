@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-double[] array = new double[100];
+double[] array = new double[10];
 
 void FillArray(double[] massive)
 {
