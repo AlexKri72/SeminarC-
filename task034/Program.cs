@@ -24,7 +24,7 @@ for (int i = 0; i < array.Length; i++)
     else array[i] -= array[i] * 2;
 }
 
-Console.Write($"\nИвертированный массив чисел: \n");
+Console.Write($"\nИнвертированный массив чисел: \n");
 PrintArray(array);
 
 Console.WriteLine();
