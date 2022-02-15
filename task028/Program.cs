@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-int a = new Random().Next(11,1000000);
+int a = new Random().Next(11,10000);
 Console.WriteLine($"Задано случайное число: {a}");
 int sum = 0;
 while (a > 0)

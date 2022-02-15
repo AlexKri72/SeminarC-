@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-int z =0;
+int z = 0; //номер координатной плоскости
 Console.Write("Введите координату x : ");
 int x = int.Parse(Console.ReadLine());
 Console.Write("Введите координату y : ");

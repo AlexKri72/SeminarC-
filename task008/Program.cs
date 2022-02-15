@@ -1,8 +1,9 @@
 ﻿// Показать четные числа от 1 до N
 
 Console.Clear();
+
 int n = new Random().Next(1,101);
-int index = 1;
+int index = 2;
 Console.WriteLine("Задано максимальное число: " + n);
 Console.Write("Четные числа : ");
 while (index <= n )
@@ -11,6 +12,8 @@ while (index <= n )
         {
             Console.Write( index + " ");
         }
-    index++;
+    index+=2;
 }
+Console.WriteLine();
+Console.WriteLine();
 
