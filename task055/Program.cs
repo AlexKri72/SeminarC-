@@ -8,7 +8,6 @@ Console.Write("Задайте количество столбцов в масс�
 int n = int.Parse(Console.ReadLine());
 
 int[,] array = new int[m, n];
-bool f = false;
 
 void FillArray(int[,] array)
 {
