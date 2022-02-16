@@ -52,14 +52,15 @@ SortArray(array);
 PrintArray(array);
 Console.WriteLine("Частотный анализ массива: ");
 int temp = array[0, 0];
-int count = 1;
+int count = 0;
 for (int i = 0; i < array.GetLength(0); i++)  // непосредственно сам частотный анализ
     for (int j = 0; j < array.GetLength(1); j++)
         if (array[i, j] == temp) count++;
         else
         {
-            Console.WriteLine($"Число {array[i,j]} встречается {count} раз, частота {count*100/array.Length} %");
+            Console.WriteLine($"Число {temp} встречается {count} раз, \tчастота {count * 100 / array.Length} \t%");
             count = 1;
             temp = array[i, j];
         }
+Console.WriteLine($"Число {array[array.GetLength(0) - 1, array.GetLength(1) - 1]} встречается {count} раз, \tчастота {count * 100 / array.Length} \t%");
 Console.WriteLine();
