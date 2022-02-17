@@ -21,7 +21,7 @@ PrintArray(array);
 int a = 0;
 for (int i = 1; i < array.Length; i += 2) a += array[i];
 
-Console.WriteLine($"\nСумма чисел массива, расположенных на нечётных позициях, равна {a} .\n");
-Console.WriteLine();
+Console.WriteLine($"\nСумма чисел массива, расположенных на нечётных позициях, равна {a} .\n\n");
+
 
 
