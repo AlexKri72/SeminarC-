@@ -1,4 +1,4 @@
-﻿// Написать программу замену элементов массива на противоположные
+﻿// Написать программу замены элементов массива на противоположные
 
 Console.Clear();
 
@@ -17,12 +17,7 @@ FillArray(array);
 Console.Write($"Первоначально заданный массив чисел: \n");
 PrintArray(array);
 
-
-for (int i = 0; i < array.Length; i++)
-{
-    if (array[i] > 0) array[i] -= array[i] * 2;
-    else array[i] -= array[i] * 2;
-}
+for (int i = 0; i < array.Length; i++) array[i] = -1 * array[i];
 
 Console.Write($"\nИнвертированный массив чисел: \n");
 PrintArray(array);
