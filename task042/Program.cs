@@ -13,6 +13,4 @@ for (int i = 0; i < arr.Length; i++)
     if (arr[i] > 0) count++; // считаем положительные числа
 }
 
-Console.WriteLine($"Введено {count} чисел больше нуля.");
-
-Console.WriteLine();
+Console.WriteLine($"\nВведено {count} чисел больше нуля.\n");
