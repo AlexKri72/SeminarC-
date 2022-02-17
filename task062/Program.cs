@@ -74,7 +74,7 @@ int min = array[0, 0];
 int MinIndexRow = 0;
 int MinIndexColumn = 0;
 
-for (int i = 0; i < array.GetLength(0); i++)
+for (int i = 0; i < array.GetLength(0); i++) //ищем минимальное значение в массиве и его индексы
 {
     for (int j = 0; j < array.GetLength(1); j++)
     {
