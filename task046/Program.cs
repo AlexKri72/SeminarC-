@@ -9,14 +9,19 @@ Console.Clear();
 
 Console.Write("Задайте коэффициент масштабирования фигуры: ");
 double k = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите список координат вершин фигуры через запятую: ");
+Console.Write("Введите список координат вершин фигуры в формате (0,0) (4,0) (4,4) (0,4): ");
 
-var input = Console.ReadLine().Split(',');
-var myList = new List<int>(input.Select(int.Parse));
+string[] input = Console.ReadLine().Replace("(","").Replace(")","").Replace(" ",",").Split(',');
 
-Console.WriteLine("Начальная координата \tМасштабированная координата ");
-foreach (var item in myList)
+double[] coordination = new double[input.Length]; // переделываем строковый массив в вещественный
+for (int i = 0; i < input.Length; i++)
 {
-    Console.WriteLine($"\t{item} \t\t\t\t{item * k:0.0}");
+    coordination[i] = Convert.ToDouble(input[i]);
+}
+
+Console.WriteLine("Начальная координата \tМасштабированная координата "); // распечатываем результат
+for (int i = 0; i < coordination.Length; i++)
+{
+    Console.WriteLine($"\t{coordination[i]:0.} \t\t\t\t{coordination[i] * k:0.0}");
 }
 Console.WriteLine();
