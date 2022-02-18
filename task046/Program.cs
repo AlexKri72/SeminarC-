@@ -9,15 +9,15 @@ Console.Clear();
 
 Console.Write("Задайте коэффициент масштабирования фигуры: ");
 double k = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите список координат вершин фигуры в формате (0,0) (4,0) (4,4) (0,4): ");
+Console.WriteLine("Введите список координат вершин фигуры в формате (0,0) (4,0) (4,4) (0,4): ");
 
 // вводим строку без лишних символов
 string[] input = Console.ReadLine().Replace("(","").Replace(")","").Replace(" ",",").Split(',');
 
 // распечатываем результат
-Console.WriteLine("Начальная координата \tМасштабированная координата "); 
-for (int i = 0; i < input.Length; i++)
+Console.WriteLine("Масштабированные координаты: "); 
+for (int i = 0; i < input.Length; i+=2)
 {
-    Console.WriteLine($"\t{input[i]:0.} \t\t\t\t{Convert.ToDouble(input[i]) * k:0.0}");
+    Console.Write($"({Convert.ToDouble(input[i]) * k:0.0} , {Convert.ToDouble(input[i+1]) * k:0.0}) ");
 }
-Console.WriteLine();
+Console.WriteLine("\n");
