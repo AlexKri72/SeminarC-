@@ -11,17 +11,13 @@ Console.Write("Задайте коэффициент масштабирован�
 double k = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите список координат вершин фигуры в формате (0,0) (4,0) (4,4) (0,4): ");
 
+// вводим строку без лишних символов
 string[] input = Console.ReadLine().Replace("(","").Replace(")","").Replace(" ",",").Split(',');
 
-double[] coordination = new double[input.Length]; // переделываем строковый массив в вещественный
+// распечатываем результат
+Console.WriteLine("Начальная координата \tМасштабированная координата "); 
 for (int i = 0; i < input.Length; i++)
 {
-    coordination[i] = Convert.ToDouble(input[i]);
-}
-
-Console.WriteLine("Начальная координата \tМасштабированная координата "); // распечатываем результат
-for (int i = 0; i < coordination.Length; i++)
-{
-    Console.WriteLine($"\t{coordination[i]:0.} \t\t\t\t{coordination[i] * k:0.0}");
+    Console.WriteLine($"\t{input[i]:0.} \t\t\t\t{Convert.ToDouble(input[i]) * k:0.0}");
 }
 Console.WriteLine();
