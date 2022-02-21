@@ -58,9 +58,9 @@ for (int i = 0; i < array.GetLength(0); i++)  // непосредственно 
         if (array[i, j] == temp) count++;
         else
         {
-            Console.WriteLine($"Число {temp} встречается {count} раз, \tчастота {count * 100 / array.Length} \t%");
+            Console.WriteLine($"Число {temp} встречается {count:00} раз, частота {count*100/ array.Length:00.0} %");
             count = 1;
             temp = array[i, j];
         }
-Console.WriteLine($"Число {array[array.GetLength(0) - 1, array.GetLength(1) - 1]} встречается {count} раз, \tчастота {count * 100 / array.Length} \t%");
+Console.WriteLine($"Число {array[array.GetLength(0) - 1, array.GetLength(1) - 1]} встречается {count:00} раз, частота {count * 100 / array.Length:00.0} %");
 Console.WriteLine();
