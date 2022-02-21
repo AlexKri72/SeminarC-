@@ -7,8 +7,7 @@ int n = int.Parse(Console.ReadLine());
 
 int NaturalNumber(int num)
 {
-    int i =1;
-    if (num == 2) return i;
+    if (num == 2) return 1;
     else 
     {
         num--;
