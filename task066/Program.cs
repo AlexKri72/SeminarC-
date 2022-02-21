@@ -12,9 +12,8 @@ int NaturalNumber(int num)
     else 
     {
         num--;
-        Console.Write($"{NaturalNumber(num):d3} ");
+        Console.Write($"{NaturalNumber(num):d2} ");
     }
     return num;
 }
-Console.WriteLine($"{NaturalNumber(n+1)}\n");
-
+NaturalNumber(n+2);
