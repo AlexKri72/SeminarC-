@@ -37,7 +37,7 @@ for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        if (array[i,j] % 2 == 0 ) array[i,j] -= array[i,j]*2;
+        if (array[i,j] % 2 == 0 ) array[i,j] *= -1;
     }
 }
 Console.WriteLine("Изменённый массив:");
