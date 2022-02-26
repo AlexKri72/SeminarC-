@@ -9,9 +9,6 @@ int b = int.Parse(Console.ReadLine());
 
 int Pow(int a, int pow)
 {
-    if (pow == 0) return 1;
-    if (pow > 0) return Pow(a, pow - 1) * a;
-    return 1 / Pow(a, -pow);
+    return  pow ==0 ?  1: Pow(a, pow - 1) * a;
 }
-
 Console.WriteLine($"\n{a} в степени {b} равно: {Pow(a, b)}\n");
