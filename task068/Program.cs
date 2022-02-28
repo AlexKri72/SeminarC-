@@ -18,6 +18,7 @@ void NaturalNumber(int m, int n)
         Console.Write($"{m:d2} ");
         NaturalNumber(m - 1, n);
     }
+    if (m == n) Console.Write($"{m:d2} ");
 }
 NaturalNumber(m, n);
 
