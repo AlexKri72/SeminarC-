@@ -7,13 +7,12 @@ int n = int.Parse(Console.ReadLine());
 
 int NaturalNumber(int num)
 {
-    num--;
     if (num != 0)
     {
         Console.Write($"{num:d2} ");
-        NaturalNumber(num);
+        NaturalNumber(num-1);
     }
     return num;
 }
-NaturalNumber(n + 1);
+NaturalNumber(n);
 
