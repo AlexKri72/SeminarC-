@@ -7,25 +7,22 @@ int m = int.Parse(Console.ReadLine());
 Console.Write("Задайте число n: ");
 int n = int.Parse(Console.ReadLine());
 int sum = 0;
-if (m > n)
-{
-    int temp = n;
-    n = m;
-    m = temp;
-}
-
 int NaturalNumber(int m, int n)
 {
-    if (m <= n)
+    if (m < n)
     {
-        Console.Write($"{m:d2} ");
         sum += m;
-        m++;
-        NaturalNumber(m, n);
+        NaturalNumber(m + 1, n);
+        return sum + n;
     }
-    return m;
+    else if (m > n)
+    {
+        sum += n;
+        NaturalNumber(m, n + 1);
+        return sum + m;
+    }
+    else return 0;
 }
-NaturalNumber(m, n);
-Console.WriteLine($"\nСумма элементов равна: {sum:n0}\n");
+Console.WriteLine($"\nСумма элементов равна: {NaturalNumber(m, n):n0}\n");
 
 
