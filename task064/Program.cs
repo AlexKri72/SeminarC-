@@ -2,28 +2,43 @@
 
 Console.Clear();
 
-int factorial(int n)
-{
-    int i, x = 1;
-    for (i = 1; i <= n; i++)
-        x *= i;
-    return x;
-}
-
-int i, n, c;
 Console.Write("Введите нужное количество строк треугольника Паскаля: ");
-n = int.Parse(Console.ReadLine());
+int row = int.Parse(Console.ReadLine());
+int[,] triangle = new int[row, row];
+const int cellWidth = 3;
 
-for (i = 0; i < n; i++)
+void FillTriangle()
 {
-    for (c = 0; c <= (n - i); c++)  // создаём после каждой строки n-i отступов от левой стороны консоли,чем ниже строка, тем меньше отсутп
-        Console.Write("   ");
-        
-    for (c = 0; c <= i; c++)
+    for (int i = 0; i < row; i++)
     {
-        int element = factorial(i) / (factorial(c) * factorial(i - c)); //получаем элемент строки треугольника  
-        Console.Write("{0}",element + "     ");
+        triangle[i, 0] = 1;
+        triangle[i, i] = 1;
     }
-    Console.WriteLine();
+    for (int i = 2; i < row; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            triangle[i, j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
+        }
+    }
 }
+void Magic()
+{
+    int col = cellWidth * row;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            Console.SetCursorPosition(col, i + 1);
+            if (triangle[i, j] != 0) Console.Write($"{triangle[i, j],cellWidth}");
+            col += cellWidth * 2;
+        }
+        col = cellWidth * row - cellWidth * (i + 1);
+        Console.WriteLine();
+    }
+}
+
+FillTriangle();
+Magic();
+
 Console.WriteLine();
