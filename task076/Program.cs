@@ -19,39 +19,34 @@
 
 Console.Clear();
 
-static int CalculateGroupsNumber(int numbersSequenceRightBound)
+static int CalculateGroupsNumber(int n)
 {
-    int groupsNumber = (int)Math.Ceiling(Math.Log(numbersSequenceRightBound,2));
-
-    if ((int)Math.Pow(2, groupsNumber) == numbersSequenceRightBound)
-        groupsNumber++;
-
+    int groupsNumber = (int)Math.Ceiling(Math.Log(n, 2));
+    if ((int)Math.Pow(2, groupsNumber) == n) groupsNumber++;
     return groupsNumber;
 }
-
-int[] GetNextGroup(int groupNumber, int groupsQuantity, int numbersSequenceRightBound)
+int[] GetNextGroup(int groupNumber, int groupsQuantity, int n)
 {
     if (groupNumber != groupsQuantity)
-        return Enumerable.Range((int)Math.Pow(2, groupNumber - 1), (int)Math.Pow(2, groupNumber) - (int)Math.Pow(2, groupNumber - 1)).ToArray();
+        return Enumerable.Range((int)Math.Pow(2, groupNumber - 1)
+                , (int)Math.Pow(2, groupNumber) - (int)Math.Pow(2, groupNumber - 1)).ToArray();
     else
-        return Enumerable.Range((int)Math.Pow(2, groupNumber - 1), numbersSequenceRightBound - (int)Math.Pow(2, groupNumber - 1) + 1).ToArray();
+        return Enumerable.Range((int)Math.Pow(2, groupNumber - 1)
+                , n - (int)Math.Pow(2, groupNumber - 1) + 1).ToArray();
 }
-
 void Main()
 {
-    int numbersSequenceRightBound = 0;
-
+    int n = 0;
     Console.Write("Введите число: ");
-    numbersSequenceRightBound = Int32.Parse(Console.ReadLine());
-    while (numbersSequenceRightBound <= 0)
+    n = int.Parse(Console.ReadLine());
+    while (n <= 0)
     {
         Console.WriteLine("Ошибка: число должно быть положительным!");
         Console.Write("Повторите ввод: ");
-        numbersSequenceRightBound = Int32.Parse(Console.ReadLine());
+        n = int.Parse(Console.ReadLine());
     }
-
-    Console.WriteLine($"Количество групп для разбиения: {CalculateGroupsNumber(numbersSequenceRightBound)}");
-    for (int i = 1; i <= CalculateGroupsNumber(numbersSequenceRightBound); i++)
-        Console.WriteLine($"{i}-я группа: {String.Join(", ", GetNextGroup(i, CalculateGroupsNumber(numbersSequenceRightBound), numbersSequenceRightBound))}");
+    Console.WriteLine($"Количество групп для разбиения: {CalculateGroupsNumber(n)}");
+    for (int i = 1; i <= CalculateGroupsNumber(n); i++)
+        Console.WriteLine($"{i}-я группа: {String.Join(", ", GetNextGroup(i, CalculateGroupsNumber(n), n))}");
 }
 Main();
